@@ -6,6 +6,7 @@ var engine, world;
 var box1;
 var pig1;
 var pig2;
+var wood5;
 
 var wood1;
 var wood2;
@@ -18,6 +19,8 @@ var box5;
 var box4; 
 var box3;
 var fundo;
+var  bodys
+
 
 function preload(){
 fundo = loadImage("bg.png")
@@ -41,6 +44,8 @@ function setup(){
     box5 = new Box(810,195,70,70);
     wood3 = new Wood(748, 120, 150, PI/7)
     wood4 = new Wood(890, 120, 140, PI/-7)
+    wood5 = new Wood(200, 200, 80,  PI/2)
+    bodys = new Rest(bird.body, wood5.body)
 }
 
 function draw(){
@@ -59,4 +64,6 @@ function draw(){
     wood3.display();
     wood4.display();
     bird.display();
+    wood5.display();
+    bodys.display();
 }
