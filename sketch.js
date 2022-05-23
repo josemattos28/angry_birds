@@ -44,8 +44,7 @@ function setup(){
     box5 = new Box(810,195,70,70);
     wood3 = new Wood(748, 120, 150, PI/7)
     wood4 = new Wood(890, 120, 140, PI/-7)
-    wood5 = new Wood(200, 200, 80,  PI/2)
-    bodys = new Rest(bird.body, wood5.body)
+    bodys = new Rest(bird.body, {x:200, y:100})
 }
 
 function draw(){
@@ -64,6 +63,13 @@ function draw(){
     wood3.display();
     wood4.display();
     bird.display();
-    wood5.display();
     bodys.display();
 }
+function mouseDragged(){
+    Matter.Body.setPosition(bird.body, {x: mouseX, y: mouseY})
+}
+
+function mouseReleased(){
+    bodys.fly()
+}
+
